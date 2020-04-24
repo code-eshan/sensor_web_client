@@ -88,3 +88,6 @@
 0:0:0:0:0:0:0:1 - - [24/Apr/2020:17:29:06 +0530] "GET /sensorRest/webapi/sensor/sensors HTTP/1.1" 404 1078
 0:0:0:0:0:0:0:1 - - [24/Apr/2020:17:29:37 +0530] "GET /sensorRest/ HTTP/1.1" 200 300
 0:0:0:0:0:0:0:1 - - [24/Apr/2020:17:29:39 +0530] "GET /sensorRest/webapi/sensors HTTP/1.1" 200 337
+127.0.0.1 - - [24/Apr/2020:17:38:19 +0530] "GET / HTTP/1.1" 404 1074
+0:0:0:0:0:0:0:1 - - [24/Apr/2020:17:38:34 +0530] "GET /sensorRest/webapi/sensors HTTP/1.1" 200 337
+0:0:0:0:0:0:0:1 - - [24/Apr/2020:17:38:44 +0530] "GET /sensorRest/webapi/sensors HTTP/1.1" 200 337
