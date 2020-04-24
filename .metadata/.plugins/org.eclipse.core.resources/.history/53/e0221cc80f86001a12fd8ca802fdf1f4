@@ -1,0 +1,27 @@
+package com.sensor.sensorRest;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("sensors")
+public class SensorResource {
+
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public Sensor getSensor() {
+		
+		System.out.println("Get Sensor Called.....");
+		Sensor s1 = new Sensor();
+		s1.setId(1);
+		s1.setStatus(false);
+		s1.setFloorNum(1);
+		s1.setRoomNum(100);
+		s1.setsLevel(5);
+		s1.setcLevel(7);
+		
+		return s1;
+	}
+	
+}

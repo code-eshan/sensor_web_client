@@ -1,0 +1,46 @@
+package com.sensor.sensorRest;
+
+import java.util.Arrays;
+import java.util.List;
+
+import javax.ws.rs.GET;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+
+@Path("sensors")
+public class SensorResource {
+	
+	SensorRepository repo = new SensorRepository();
+
+	@GET
+	@Produces(MediaType.APPLICATION_XML)
+	public List<Sensor> getSensors() {
+		
+		System.out.println("Get Sensor Called.....");
+		
+		return repo.getSensors();
+	}
+	
+	@GET
+	@Path("sensor/{id}")
+	@Produces(MediaType.APPLICATION_XML)
+	public Sensor getSensor(@PathParam("id") int id) {
+		return repo.getSensor(id);
+	}
+	
+	
+	@POST
+	@Path("sensor")
+	public Sensor createSensor(Sensor s1) {
+		
+		System.out.println(s1);
+		
+		repo.create(s1);
+		
+		return s1;
+	}
+	
+}
