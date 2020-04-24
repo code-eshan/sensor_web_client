@@ -1,57 +1,110 @@
 package com.sensor.sensorRest;
 
 import java.util.ArrayList;
+import java.sql.*;
 import java.util.List;
 
 public class SensorRepository {
 
-	List<Sensor> sensors;
+	
+	Connection con = null;
 	
 	public SensorRepository() {
 		
-		sensors = new ArrayList<>();
+		String url = "jdbc:mysql://localhost:3306/sensordb";
+		String username = "root";
+		String password = "";
+		try {
+			
+			Class.forName("com.mysql.jdbc.Driver");
+			con = DriverManager.getConnection(url,username,password);
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 		
-		Sensor s1 = new Sensor();
-		s1.setId(1);
-		s1.setStatus(false);
-		s1.setFloorNum(1);
-		s1.setRoomNum(100);
-		s1.setsLevel(5);
-		s1.setcLevel(7);
-		
-		Sensor s2 = new Sensor();
-		s2.setId(2);
-		s2.setStatus(true);
-		s2.setFloorNum(2);
-		s2.setRoomNum(200);
-		s2.setsLevel(6);
-		s2.setcLevel(8);
-		
-		sensors.add(s1);
-		sensors.add(s2);
 	}
 	
 	public List<Sensor> getSensors() {
+		
+		List<Sensor> sensors = new ArrayList<>();
+		
+		String sql = "select * from sensor";
+		try {
+			
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			while(rs.next()) {
+				Sensor s = new Sensor();
+				s.setId(rs.getInt(1));
+				s.setStatus(rs.getBoolean(2));
+				s.setFloorNum(rs.getInt(3));
+				s.setRoomNum(rs.getInt(4));
+				s.setsLevel(rs.getInt(5));
+				s.setcLevel(rs.getInt(6));
+				
+				sensors.add(s);
+			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+		
+		
+		
 		return sensors;
 	}
 	
 	public Sensor getSensor(int id) {
 		
-		Sensor s1 = null;
-		
-		for(Sensor s : sensors) {
-			if(s.getId() == id) {
-				return s;
+		String sql = "select * from sensor where id="+ id;
+		Sensor s = new Sensor();
+		try {
+			
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+			if(rs.next()) {
+				
+				s.setId(rs.getInt(1));
+				s.setStatus(rs.getBoolean(2));
+				s.setFloorNum(rs.getInt(3));
+				s.setRoomNum(rs.getInt(4));
+				s.setsLevel(rs.getInt(5));
+				s.setcLevel(rs.getInt(6));
+				
+				
 			}
+			
+		} catch (Exception e) {
+			System.out.println(e);
 		}
 		
-		return null;
+		return s;
+		
 	}
 
 	public void create(Sensor s1) {
 		
-		sensors.add(s1);
+		String sql = "insert into sensor values (?,?,?,?,?,?)";
 		
+		try {
+			
+			PreparedStatement st = con.prepareStatement(sql);
+			
+			st.setInt(1, s1.getId());
+			st.setBoolean(2, s1.isStatus());
+			st.setInt(3, s1.getFloorNum());
+			st.setInt(4, s1.getRoomNum());
+			st.setInt(5, s1.getsLevel());
+			st.setInt(6, s1.getcLevel());
+			
+			st.executeUpdate();
+			
+			
+			
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 }
