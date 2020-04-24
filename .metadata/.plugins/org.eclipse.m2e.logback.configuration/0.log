@@ -1,0 +1,20 @@
+2020-04-24 14:35:24,346 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-04-24 14:38:02,848 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Collecting project info '/pom.xml' C:\Users\Eeshan\Desktop\SENSOR_WEB_CLIENT\sensorRest\pom.xml
+2020-04-24 14:38:04,067 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.maven.ide.eclipse.wtp.WarLifecycleMapping lifecycle mapping for MavenProject: com.sensor:sensorRest:0.0.1-SNAPSHOT @ C:\Users\Eeshan\Desktop\SENSOR_WEB_CLIENT\sensorRest\pom.xml.
+2020-04-24 14:38:05,551 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /sensorRest/src/main/java
+2020-04-24 14:38:05,552 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /sensorRest/src/main/resources
+2020-04-24 14:38:05,563 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /sensorRest/src/test/java
+2020-04-24 14:38:07,787 [Worker-20: Creating jersey-quickstart-webapp] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Imported and configured 1 project(s) in 4 sec
+2020-04-24 14:38:09,042 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:38:09,050 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-04-24 14:38:09,055 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:38:09,055 [Worker-7: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eeshan\Desktop\SENSOR_WEB_CLIENT\sensorRest\src\test\resources
+2020-04-24 14:38:09,391 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:38:09,394 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-04-24 14:38:09,396 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:38:09,396 [Worker-5: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eeshan\Desktop\SENSOR_WEB_CLIENT\sensorRest\src\test\resources
+2020-04-24 14:46:17,549 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2020-04-24 14:46:22,302 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:46:22,310 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2020-04-24 14:46:22,315 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2020-04-24 14:46:22,315 [Worker-9: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Eeshan\Desktop\SENSOR_WEB_CLIENT\sensor_web_client\sensorRest\src\test\resources
