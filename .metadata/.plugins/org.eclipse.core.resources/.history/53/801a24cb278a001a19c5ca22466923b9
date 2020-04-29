@@ -1,0 +1,162 @@
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width-device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie-edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+<style>
+
+
+</style>
+
+</head>
+
+
+<body>
+    <h2>Fire Alarm Sensor Details</h2>
+<!--   <p><a href="webapi/myresource">Jersey resource</a>
+    <p><a href="webapi/sensors">Get Sensor List</p>
+    --> 
+    
+    <table class="table table-stripped">
+    
+    <tr>
+    <th>Sensor ID</th>
+    <th>Status</th>
+    <th>Floor Number</th>
+    <th>Room Number</th>
+    <th>Smoke Level</th>
+    <th>CO2 Level</th>
+    </tr>
+    
+    <tbody id="data">
+    
+    </tbody>
+    
+    </table>
+    
+    <script>
+    
+ // Rough implementation. Untested.
+    function timeout(ms, promise) {
+      return new Promise(function(resolve, reject) {
+        setTimeout(function() {
+          reject(new Error("timeout"))
+        }, ms)
+        promise.then(resolve, reject)
+      })
+    }
+
+    timeout(1000, fetch('http://localhost:8080/sensorRest/webapi/sensors')).then(
+    		res => {
+    			res.json().then(
+        				data => {
+        					console.log(data);
+        					if(data.length > 0) {
+        						var temp = "";
+        						
+        						//----- star for loop
+        						
+        						data.forEach((u) => {
+        							
+        							if((u.sLevel > 5) || (u.cLevel > 5)) {
+        								temp += "<tr>";
+            							temp += '<td style="color:red">' + u.id + "</td>";
+            							if(u.status) {
+            								temp += '<td style="color:red">' + "active" + "</td>";
+            							} else {
+            								temp += '<td style="color:red">' + "inactive" + "</td>";
+            							}
+            							
+            							temp += '<td style="color:red">' + u.floorNum + "</td>";
+            							temp += '<td style="color:red">' + u.roomNum + "</td>";
+            							temp += '<td style="color:red">' + u.sLevel + "</td>";
+            							temp += '<td style="color:red">' + u.cLevel + "</td></tr>";
+        							}
+        							else {
+       
+        								temp += "<tr>";
+            							temp += "<td>" + u.id + "</td>";
+            							if(u.status) {
+            								temp += "<td>" + "active" + "</td>";
+            							} else {
+            								temp += "<td>" + "inactive" + "</td>";
+            							}
+            							
+            							temp += "<td>" + u.floorNum + "</td>";
+            							temp += "<td>" + u.roomNum + "</td>";
+            							temp += "<td>" + u.sLevel + "</td>";
+            							temp += "<td>" + u.cLevel + "</td></tr>";
+        							}
+        							
+        						})
+        						//----- close for loop
+        						
+        						document.getElementById("data").innerHTML = temp;
+        					}
+        				}		
+        			)
+      
+    }).catch(function(error) {
+      // might be a timeout error
+    })
+    
+   /*  
+    fetch("http://localhost:8080/sensorRest/webapi/sensors").then(
+    		res=>{
+    			res.json().then(
+    				data => {
+    					console.log(data);
+    					if(data.length > 0) {
+    						var temp = "";
+    						
+    						//----- star for loop
+    						
+    						data.forEach((u) => {
+    							
+    							if((u.sLevel > 5) || (u.cLevel > 5)) {
+    								temp += "<tr>";
+        							temp += '<td style="color:red">' + u.id + "</td>";
+        							if(u.status) {
+        								temp += '<td style="color:red">' + "active" + "</td>";
+        							} else {
+        								temp += '<td style="color:red">' + "inactive" + "</td>";
+        							}
+        							
+        							temp += '<td style="color:red">' + u.floorNum + "</td>";
+        							temp += '<td style="color:red">' + u.roomNum + "</td>";
+        							temp += '<td style="color:red">' + u.sLevel + "</td>";
+        							temp += '<td style="color:red">' + u.cLevel + "</td></tr>";
+    							}
+    							else {
+   
+    								temp += "<tr>";
+        							temp += "<td>" + u.id + "</td>";
+        							if(u.status) {
+        								temp += "<td>" + "active" + "</td>";
+        							} else {
+        								temp += "<td>" + "inactive" + "</td>";
+        							}
+        							
+        							temp += "<td>" + u.floorNum + "</td>";
+        							temp += "<td>" + u.roomNum + "</td>";
+        							temp += "<td>" + u.sLevel + "</td>";
+        							temp += "<td>" + u.cLevel + "</td></tr>";
+    							}
+    							
+    						})
+    						//----- close for loop
+    						
+    						document.getElementById("data").innerHTML = temp;
+    					}
+    				}		
+    			)
+    		}
+    ) */
+    
+    </script>
+</body>
+</html>

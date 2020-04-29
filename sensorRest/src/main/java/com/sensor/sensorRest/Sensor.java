@@ -1,8 +1,6 @@
 package com.sensor.sensorRest;
 
-import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement
 public class Sensor {
 
 	private int id;

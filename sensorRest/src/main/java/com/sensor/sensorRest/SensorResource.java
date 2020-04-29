@@ -16,7 +16,7 @@ public class SensorResource {
 	SensorRepository repo = new SensorRepository();
 
 	@GET
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Sensor> getSensors() {
 		
 		System.out.println("Get Sensor Called.....");
@@ -26,7 +26,7 @@ public class SensorResource {
 	
 	@GET
 	@Path("sensor/{id}")
-	@Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	@Produces(MediaType.APPLICATION_JSON)
 	public Sensor getSensor(@PathParam("id") int id) {
 		return repo.getSensor(id);
 	}
