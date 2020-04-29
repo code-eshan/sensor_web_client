@@ -6,3 +6,7 @@ Apr 24, 2020 15:09:26.15
 Apr 24, 2020 15:09:26.15 
 Apr 24, 2020 15:09:26.16 ###!!! [Child][MessageChannel::SendAndWait] Error: Channel error: cannot send/recv
 Apr 24, 2020 15:09:26.16 
+
+Apr 30, 2020 02:41:19.72 NEW SESSION
+Apr 30, 2020 02:41:19.72 [14956:3672:0430/024119.724:ERROR:browser_switcher_service.cc(238)] XXX Init()
+Apr 30, 2020 02:41:29.31 [14956:3672:0430/024129.314:ERROR:device_event_log_impl.cc(162)] [02:41:29.313] Bluetooth: bluetooth_adapter_winrt.cc:1145 RequestRadioAccessAsync failed: RadioAccessStatus::DeniedByUserWill not be able to change radio power.

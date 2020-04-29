@@ -1,6 +1,4 @@
 package com.sensor.sensorRest;
-
-import java.util.Arrays;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -10,37 +8,42 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+//path is set as sensors
 @Path("sensors")
 public class SensorResource {
 	
+	//A sensor repository object to access the repository
 	SensorRepository repo = new SensorRepository();
 
+	//This is a GET request method which gives data type in a JSON format
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Sensor> getSensors() {
 		
 		System.out.println("Get Sensor Called.....");
 		
+		//accesses the method getSensors() in the repository
 		return repo.getSensors();
 	}
 	
-	@GET
-	@Path("sensor/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
-	public Sensor getSensor(@PathParam("id") int id) {
-		return repo.getSensor(id);
-	}
 	
-	
-	@POST
-	@Path("sensor")
-	public Sensor createSensor(Sensor s1) {
-		
-		System.out.println(s1);
-		
-		repo.create(s1);
-		
-		return s1;
-	}
+	  @GET
+	  
+	  @Path("sensor/{id}")
+	  
+	  @Produces(MediaType.APPLICATION_JSON) public Sensor
+	  getSensor(@PathParam("id") int id) { return repo.getSensor(id); }
+	  
+	  
+	  @POST
+	  
+	  @Path("sensor") public Sensor createSensor(Sensor s1) {
+	  
+	  System.out.println(s1);
+	  
+	  repo.create(s1);
+	  
+	  return s1; }
+	 
 	
 }
