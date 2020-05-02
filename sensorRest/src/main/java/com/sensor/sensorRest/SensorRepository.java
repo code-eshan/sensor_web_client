@@ -71,7 +71,7 @@ public class SensorRepository {
 			while (rs.next()) {
 				Sensor s = new Sensor();
 				s.setId(rs.getInt(1));
-				s.setStatus(rs.getBoolean(2));
+				s.setStatus(rs.getString(2));
 				s.setFloorNum(rs.getInt(3));
 				s.setRoomNum(rs.getInt(4));
 				s.setsLevel(rs.getInt(5));

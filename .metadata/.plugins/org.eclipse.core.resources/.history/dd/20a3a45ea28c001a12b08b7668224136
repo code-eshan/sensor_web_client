@@ -72,7 +72,13 @@
     	    								temp += "<tr>";
     	        							temp += '<td style="color:red">' + u.id + "</td>";
     	        							
-    	        							temp += '<td style="color:red">' + u.status + "</td>";
+    	        							//if status is true it is set as active
+    	        							 //else it is said inactive -->
+    	        							if(u.status) {
+    	        								temp += '<td style="color:red">' + "active" + "</td>";
+    	        							} else {
+    	        								temp += '<td style="color:red">' + "inactive" + "</td>";
+    	        							}
     	        							
     	        							temp += '<td style="color:red">' + u.floorNum + "</td>";
     	        							temp += '<td style="color:red">' + u.roomNum + "</td>";
@@ -85,8 +91,11 @@
     	    								 //as a row without any beautification -->
     	    								temp += "<tr>";
     	        							temp += "<td>" + u.id + "</td>";
-    	        							
-    	        							temp += "<td>" + u.status + "</td>";
+    	        							if(u.status) {
+    	        								temp += "<td>" + "active" + "</td>";
+    	        							} else {
+    	        								temp += "<td>" + "inactive" + "</td>";
+    	        							}
     	        							
     	        							temp += "<td>" + u.floorNum + "</td>";
     	        							temp += "<td>" + u.roomNum + "</td>";
