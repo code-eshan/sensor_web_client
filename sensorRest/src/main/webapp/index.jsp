@@ -5,39 +5,38 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width-device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie-edge">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 <style>
-
-
 </style>
 
 </head>
 
 
 <body>
-    <h2>Fire Alarm Sensor Details</h2>
-    
-    <table class="table table-stripped">
-    
-    <!-- Table Header is set -->
-    <tr>
-    <th>Sensor ID</th>
-    <th>Status</th>
-    <th>Floor Number</th>
-    <th>Room Number</th>
-    <th>Smoke Level</th>
-    <th>CO2 Level</th>
-    </tr>
-    
-    <!-- Table Body is set with an id as data -->
-    <tbody id="data">
-    
-    </tbody>
-    
-    </table>
-    
-    <!-- Start of script tag -->
-    <script>
+	<h2>Fire Alarm Sensor Details</h2>
+
+	<table class="table table-stripped">
+
+		<!-- Table Header is set -->
+		<tr>
+			<th>Sensor ID</th>
+			<th>Status</th>
+			<th>Floor Number</th>
+			<th>Room Number</th>
+			<th>Smoke Level</th>
+			<th>CO2 Level</th>
+		</tr>
+
+		<!-- Table Body is set with an id as data -->
+		<tbody id="data">
+
+		</tbody>
+
+	</table>
+
+	<!-- Start of script tag -->
+	<script>
     
     //The main function
     function startFetchingData() {

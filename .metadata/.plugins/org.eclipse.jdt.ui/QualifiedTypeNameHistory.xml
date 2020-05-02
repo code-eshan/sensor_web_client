@@ -23,4 +23,7 @@
 <fullyQualifiedTypeName name="javax.mail.Message.RecipientType"/>
 <fullyQualifiedTypeName name="javax.mail.internet.InternetAddress"/>
 <fullyQualifiedTypeName name="javax.mail.Transport"/>
+<fullyQualifiedTypeName name="com.twilio.Twilio"/>
+<fullyQualifiedTypeName name="java.net.HttpURLConnection"/>
+<fullyQualifiedTypeName name="com.twilio.rest.api.v2010.account.Message"/>
 </qualifiedTypeNameHistroy>
