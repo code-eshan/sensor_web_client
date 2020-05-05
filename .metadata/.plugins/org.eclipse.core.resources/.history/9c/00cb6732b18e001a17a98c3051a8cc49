@@ -54,7 +54,7 @@ public class SensorResource {
 	@Path("check")
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public void ckeckSensor() throws SQLException, InterruptedException {
+	public void ckeckSensor() throws SQLException {
 		
 		repo.check();
 	}

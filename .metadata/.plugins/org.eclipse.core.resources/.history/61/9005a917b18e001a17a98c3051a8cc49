@@ -1,6 +1,5 @@
 package com.sensor.sensorRest;
 
-import java.sql.SQLException;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -27,37 +26,5 @@ public class SensorResource {
 		// accesses the method getSensors() in the repository
 		return repo.getSensors();
 	}
-	
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	public void addSensor(Sensor newSensor) throws SQLException {
-		repo.add(newSensor);
-
-	}
-	
-	@Path("{id}")
-	@POST
-	@Produces(MediaType.APPLICATION_JSON)
-	public void updateSensor(Sensor newSensor) throws SQLException {
-		repo.update(newSensor);
-
-	}
-	
-	@Path("{id}")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public void deleteSensor(@PathParam("id") int id) throws SQLException {
-		
-		repo.delete(id);
-	}
-
-	@Path("check")
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
-	public void ckeckSensor() throws SQLException, InterruptedException {
-		
-		repo.check();
-	}
-	
 
 }

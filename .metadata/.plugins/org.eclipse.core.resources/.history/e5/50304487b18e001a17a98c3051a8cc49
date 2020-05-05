@@ -106,7 +106,6 @@ public class SensorRepository {
 		return sensors;
 	}
 
-	//Method to add the sensor details
 	public void add(Sensor sensor) throws SQLException {
 
 		String query = "insert into sensor (id,status,floorNum,roomNum,sLevel,cLevel) values (?,?,?,?,?,?)";
@@ -123,7 +122,6 @@ public class SensorRepository {
 //				
 	}
 
-	//method to update the sensor details
 	public void update(Sensor newSensor) throws SQLException {
 
 		String query1 = "Update sensor set id = '" + newSensor.getId() + "', floorNum = '" + newSensor.getFloorNum()
@@ -137,7 +135,6 @@ public class SensorRepository {
 
 	}
 
-	//Method to delete the sensor details
 	public void delete(int id) throws SQLException {
 		String query2 = "delete from sensor where id = '" + id + "' ";
 		PreparedStatement stm = (PreparedStatement) con.prepareStatement(query2);
@@ -148,7 +145,6 @@ public class SensorRepository {
 
 	}
 
-	//Method to check the details
 	public void check() throws InterruptedException, SQLException {
 		int i;
 		for (i = 0; i >= 0; i++) {
@@ -235,6 +231,7 @@ public class SensorRepository {
 			Transport.send(message);
 			System.out.println("Message sent successfully.");
 		} catch (MessagingException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -256,8 +253,10 @@ public class SensorRepository {
 			return message;
 
 		} catch (AddressException e) {
+			
 			e.printStackTrace();
 		} catch (MessagingException e) {
+			
 			e.printStackTrace();
 		}
 		return null;
