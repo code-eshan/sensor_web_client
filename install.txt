@@ -1,0 +1,5 @@
+1. Open the project in Eclipse IDE for Enterprise Java Developers.
+2. Run Xampp Control Panel and start apache and mysql.
+3. Visit phpmyadmin page and import the sensor.sql file into it.
+4. Run desktop client first and start adding editing and deleting files.
+5. Run web application and see the data getting displayed every 15 seconds and the emails and sms will be sent to relevant people.
